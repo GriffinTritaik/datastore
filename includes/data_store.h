@@ -28,6 +28,9 @@ public:
 	//pass in a crypto object and it will be used to encrypt 
 	//data that is loaded or saved, otherwise data is stored in the clear
 	DataStore(Crypto *pCrypt = 0);
+	
+	//please do not delete any crypto pointers that were passed
+	//to this object, let the object creator manage them
 	virtual ~DataStore(void);
 };
 
