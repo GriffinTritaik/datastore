@@ -17,6 +17,7 @@ public:
 	virtual ~DataStore_File(void);
 
 	//load from file myFileName, if present, use the crypto object to decrypt 
+	//returns true on success, false otherwise
 	bool load(std::vector<String_Data> &myVector);
 
 	//save to file myFileName, if present, use the crypto object to encrypt 
@@ -24,6 +25,7 @@ public:
 	//if crypto object present, saved this to disk and then sent a std::endl
 	//so each entry is encrypted, but you can count the number of entries 
 	//by the number of lines in the file
+	//returns true on success, false otherwise
 	bool save(std::vector<String_Data> &myVector);
 private:
 	bool openFile(std::fstream& myfile,const std::string& myFileName, std::ios_base::openmode mode=std::ios_base::in);
